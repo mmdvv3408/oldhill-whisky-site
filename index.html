@@ -37,7 +37,7 @@
   .gold { color: var(--gold-soft); font-style: italic; font-weight: 500; }
 
   /* header */
-  .site-bar { position: fixed; z-index: 60; inset: 0 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1.1rem var(--sc-gutter); pointer-events: none; }
+  .site-bar { background: linear-gradient(180deg, rgb(10 7 6 / 0.82), rgb(10 7 6 / 0.45) 60%, transparent); position: fixed; z-index: 60; inset: 0 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1.1rem var(--sc-gutter); pointer-events: none; }
   .site-bar > * { pointer-events: auto; }
   .btn { display: inline-flex; align-items: center; gap: 0.6em; min-height: 44px; padding: 0.8rem 1.4rem; border-radius: 999px; font: 600 0.78rem/1 var(--sc-font-text); letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease; }
   .btn--ghost { color: var(--sc-ink); border: 1px solid color-mix(in oklab, var(--sc-ink) 40%, transparent); background: color-mix(in oklab, var(--sc-canvas) 35%, transparent); backdrop-filter: blur(8px); }
@@ -105,7 +105,7 @@
   .turn-hint::before, .turn-hint::after { content: ""; display: inline-block; width: 2.2rem; height: 1px; background: currentColor; vertical-align: middle; margin: 0 0.8rem; opacity: 0.6; }
   .close__copy h2 { font-size: clamp(2.8rem, 5.6vw, 5.8rem); }
   .lamp { justify-self: center; display: grid; justify-items: center; gap: 1.4rem; }
-  .lamp__bottle { position: relative; height: min(74svh, 760px); aspect-ratio: 228 / 894; transform: perspective(900px) rotateY(calc(var(--lx, 0) * 10deg)); transition: transform 300ms ease-out; }
+  .lamp__bottle { position: relative; height: min(74svh, 760px); aspect-ratio: 422 / 1788; transform: perspective(900px) rotateY(calc(var(--lx, 0) * 10deg)); transition: transform 300ms ease-out; }
   .lamp__bottle img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 34px 40px rgb(0 0 0 / 0.6)); }
   .lamp__light { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
     -webkit-mask: url(assets/bottle.webp) center / contain no-repeat; mask: url(assets/bottle.webp) center / contain no-repeat;
@@ -159,17 +159,17 @@
   .name__w--l { --dir: -1; } .name__w--r { --dir: 1; }
   .name__w span { display: inline-block; opacity: 0; transform: translateY(40%) rotateX(-60deg); transition: transform 1200ms cubic-bezier(.2,.8,.1,1), opacity 900ms ease; }
   html.is-ready .name__w span { transform: none; opacity: 1; }
-  .h-bottle { position: absolute; z-index: 2; left: 50%; top: 52%; height: min(76svh, 820px); aspect-ratio: 228 / 894; translate: -50% -50%; perspective: 900px;
+  .h-bottle { position: absolute; z-index: 2; left: 50%; top: 52%; height: min(76svh, 820px); aspect-ratio: 422 / 1788; translate: -50% -50%; perspective: 900px;
     transform: translateY(calc((1 - var(--sc-p, 0)) * 4vh)) scale(calc(0.96 + var(--sc-p, 0) * 0.1)); transform-origin: 50% 80%; will-change: transform; }
   .h-bottle__tilt { position: absolute; inset: 0; transform: rotateY(calc(-14deg + var(--sc-p, 0) * 28deg)) rotateZ(calc(-1.5deg + var(--sc-p, 0) * 3deg)); transform-style: preserve-3d; transition: transform 120ms linear; }
-  .h-cut { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 30px 40px rgb(0 0 0 / 0.55)); opacity: 0; transform: translateY(6%); transition: opacity 1200ms 250ms ease, transform 1400ms 250ms cubic-bezier(.2,.8,.1,1); }
-  html.is-ready .h-cut { opacity: 1; transform: none; }
+  .h-cut { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 30px 40px rgb(0 0 0 / 0.55)); opacity: 0; transform: translateY(6%); transition: opacity 900ms ease, transform 1200ms cubic-bezier(.2,.8,.1,1); }
+  html:not(.is-intro) .h-cut { opacity: 1; transform: none; }
   .h-sheen { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
     -webkit-mask: url(assets/bottle.webp) center / contain no-repeat; mask: url(assets/bottle.webp) center / contain no-repeat;
-    background: linear-gradient(100deg, transparent 35%, rgb(255 236 200 / 0.55) 48%, rgb(255 236 200 / 0.12) 54%, transparent 62%) no-repeat;
+    background: linear-gradient(100deg, transparent 35%, rgb(255 236 200 / 0.26) 48%, rgb(255 236 200 / 0.06) 54%, transparent 62%) no-repeat;
     background-size: 300% 100%; background-position: calc(110% - var(--sc-p, 0) * 120%) 0; opacity: 0.9; }
-  .h-shadow { position: absolute; left: 10%; right: 10%; bottom: -2%; height: 4%; border-radius: 50%; background: radial-gradient(closest-side, rgb(0 0 0 / 0.75), transparent); filter: blur(4px); }
-  .exit-fade { position: absolute; inset: 0; z-index: 40; pointer-events: none; background: var(--fade-to, #0d0b0b); opacity: calc((var(--sc-p, 0) - 0.86) * 7.2); }
+  .h-shadow { position: absolute; left: -30%; right: -30%; bottom: -3%; height: 7%; border-radius: 50%; background: radial-gradient(closest-side, rgb(0 0 0 / 0.9), rgb(0 0 0 / 0.4) 55%, transparent); filter: blur(6px); z-index: -1; }
+  .exit-fade { position: absolute; inset: 0; z-index: 40; pointer-events: none; background: var(--fade-to, #0d0b0b); opacity: min(0.55, calc((var(--sc-p, 0) - 0.9) * 6)); }
   .h-tag { position: absolute; z-index: 5; left: 50%; top: calc(4.6rem + 3vh); translate: -50% 0; margin: 0; white-space: nowrap; font: 600 0.72rem/1 var(--sc-font-text); letter-spacing: 0.36em; text-transform: uppercase; color: var(--sc-accent); }
   .h-title::before { content: ""; position: absolute; inset: -40% 10%; z-index: -1; background: radial-gradient(closest-side, rgb(7 5 5 / 0.85), transparent); }
   .h-tag { text-shadow: 0 1px 12px #000; } .h-tag::before { content: ""; position: absolute; inset: -1.2rem -3rem; z-index: -1; background: radial-gradient(closest-side, rgb(7 5 5 / 0.9), transparent); }
@@ -199,7 +199,7 @@
   @media (max-width: 860px) {
     .name { flex-direction: column; gap: 52svh; }
     .name__w { font-size: 30vw; transform: translateY(calc(var(--sc-p, 0) * var(--dir) * 40vh)); }
-    .h-bottle { height: 54svh; top: 47%; }
+    .h-bottle { height: 60svh; top: 48%; }
     .h-tag { display: none; }
     .name { gap: 58svh; }
     .callout { display: none; }
@@ -243,7 +243,7 @@
       </div>
       <div class="h-bottle">
         <div class="h-bottle__tilt">
-          <img class="h-cut" src="assets/bottle.webp" width="228" height="894" alt="The Old Hill Spirits Miltonduff 2009, 16 year old single malt bottle">
+          <img class="h-cut" src="assets/bottle.webp" width="422" height="1788" alt="The Old Hill Spirits Miltonduff 2009, 16 year old single malt bottle">
           <span class="h-sheen" aria-hidden="true"></span>
         </div>
         <span class="h-shadow" aria-hidden="true"></span>
@@ -339,7 +339,7 @@
     <div data-sc-stage class="close">
       <div class="lamp" id="lamp" data-sc-cue="0 1 0 0" data-sc-rise="0">
         <div class="lamp__bottle">
-          <img src="assets/bottle.webp" width="228" height="894" alt="The Miltonduff 2009 bottle">
+          <img src="assets/bottle.webp" width="422" height="1788" alt="The Miltonduff 2009 bottle">
           <span class="lamp__light" aria-hidden="true"></span>
         </div>
         <span class="lamp__hint">Move to catch the light</span>
