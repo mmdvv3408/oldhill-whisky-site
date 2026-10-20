@@ -122,6 +122,74 @@
     .foot { justify-content: center; text-align: center; font-size: 0.66rem; }
     .site-bar .btn { padding: 0.7rem 1rem; font-size: 0.68rem; }
   }
+
+  /* ---------- v2 ---------- */
+  html.is-intro body { overflow: hidden; }
+  #intro { position: fixed; inset: 0; z-index: 100; background: #070505; display: grid; place-content: center; justify-items: center; gap: 1.2rem; transition: opacity 900ms cubic-bezier(.2,.7,.1,1), visibility 0s 900ms; }
+  html:not(.is-intro) #intro { opacity: 0; visibility: hidden; }
+  .intro__mark { font: 600 clamp(3rem, 9vw, 7rem)/1 var(--sc-font-display); letter-spacing: 0.08em; color: var(--sc-ink); display: flex; overflow: hidden; }
+  .intro__mark span { display: inline-block; transform: translateY(110%); animation: rise 900ms cubic-bezier(.2,.8,.1,1) forwards; }
+  .intro__mark span:nth-child(n) { animation-delay: calc(var(--i, 0) * 70ms + 150ms); }
+  .intro__line { width: min(60vw, 26rem); height: 1px; background: var(--sc-accent); transform: scaleX(0); transform-origin: left; animation: grow 1500ms 400ms cubic-bezier(.6,0,.2,1) forwards; }
+  .intro__sub { margin: 0; font: 600 0.7rem/1 var(--sc-font-text); letter-spacing: 0.5em; text-transform: uppercase; color: var(--sc-accent); opacity: 0; animation: fade 800ms 900ms forwards; }
+  @keyframes rise { to { transform: none; } }
+  @keyframes grow { to { transform: scaleX(1); } }
+  @keyframes fade { to { opacity: 1; } }
+  #dust { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 30; pointer-events: none; mix-blend-mode: screen; }
+
+  /* hero */
+  .act-hero [data-sc-stage] { background: #070505; }
+  .ember { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+  .name { position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; gap: clamp(9rem, 22vw, 26rem); pointer-events: none; }
+  .name__w { display: flex; padding: 0.06em 0.02em; font: 600 clamp(6rem, 21vw, 24rem)/0.82 var(--sc-font-display); letter-spacing: -0.02em; color: #d8b26a;
+    transform: translateX(calc(var(--sc-p, 0) * var(--dir) * 38vw)) scale(calc(1 + var(--sc-p, 0) * 0.12)); opacity: calc(1 - var(--sc-p, 0) * 1.6); will-change: transform, opacity; }
+  .name__w--l { --dir: -1; } .name__w--r { --dir: 1; }
+  .name__w span { display: inline-block; opacity: 0; transform: translateY(40%) rotateX(-60deg); transition: transform 1200ms cubic-bezier(.2,.8,.1,1), opacity 900ms ease; }
+  html.is-ready .name__w span { transform: none; opacity: 1; }
+  .h-bottle { position: absolute; inset: 0; z-index: 2; transform: scale(calc(0.92 + var(--sc-p, 0) * 0.3)) translateY(calc(var(--sc-p, 0) * -3vh)); transform-origin: 50% 55%; will-change: transform; }
+  .h-bottle { mix-blend-mode: screen; }
+  .h-bottle video, .h-bottle .sc-stage__poster { object-fit: contain !important; }
+  .h-tag { position: absolute; z-index: 5; left: 50%; top: calc(4.6rem + 3vh); translate: -50% 0; margin: 0; white-space: nowrap; font: 600 0.72rem/1 var(--sc-font-text); letter-spacing: 0.36em; text-transform: uppercase; color: var(--sc-accent); }
+  .h-title::before { content: ""; position: absolute; inset: -40% 10%; z-index: -1; background: radial-gradient(closest-side, rgb(7 5 5 / 0.85), transparent); }
+  .h-tag { text-shadow: 0 1px 12px #000; } .h-tag::before { content: ""; position: absolute; inset: -1.2rem -3rem; z-index: -1; background: radial-gradient(closest-side, rgb(7 5 5 / 0.9), transparent); }
+  .h-title { isolation: isolate; position: absolute; z-index: 5; left: 0; right: 0; bottom: clamp(2rem, 8vh, 6rem); margin: 0; text-align: center; font: 600 clamp(3rem, 9.5vw, 10rem)/0.9 var(--sc-font-display); letter-spacing: -0.02em; color: var(--sc-ink); text-shadow: 0 6px 40px rgb(0 0 0 / 0.7); }
+  .callout { position: absolute; z-index: 5; top: 42%; display: grid; gap: 0.35rem; font: 500 0.78rem/1.3 var(--sc-font-text); letter-spacing: 0.18em; text-transform: uppercase; color: var(--sc-ink-soft); }
+  .callout b { font: 600 clamp(1.6rem, 2.6vw, 2.6rem)/1 var(--sc-font-display); letter-spacing: 0; text-transform: none; color: var(--sc-ink); }
+  .callout::before { content: ""; position: absolute; top: 1.1rem; width: clamp(3rem, 9vw, 9rem); height: 1px; background: linear-gradient(90deg, var(--sc-accent), transparent); }
+  .callout--l { right: calc(50% + clamp(9rem, 15vw, 16rem)); text-align: right; }
+  .callout--l::before { left: calc(100% + 1rem); }
+  .callout--r { left: calc(50% + clamp(9rem, 15vw, 16rem)); }
+  .callout--r::before { right: calc(100% + 1rem); transform: scaleX(-1); }
+
+  /* hill */
+  .sky { position: absolute; inset: -8%; width: 116%; height: 116%; object-fit: cover; transform: translateY(calc(var(--sc-p, 0) * -6vh)) scale(calc(1.15 - var(--sc-p, 0) * 0.15)); }
+  .hill-vig { position: absolute; inset: 0; z-index: 1; background: radial-gradient(70% 80% at 50% 45%, transparent 30%, rgb(10 6 5 / 0.85) 100%); }
+  .outline-word { position: absolute; z-index: 1; top: 50%; left: 0; translate: 0 -50%; white-space: nowrap; font: 600 clamp(8rem, 24vw, 26rem)/0.8 var(--sc-font-display); color: transparent; -webkit-text-stroke: 1.5px rgb(255 214 150 / 0.55); transform: translateX(calc(30vw - var(--sc-p, 0) * 90vw)); pointer-events: none; }
+  .arch { position: absolute; z-index: 2; left: 50%; top: 50%; height: 90svh; aspect-ratio: 9 / 16; border-radius: 999px 999px 1rem 1rem; overflow: hidden;
+    translate: -50% -50%; transform: scale(calc(0.38 + min(var(--sc-p, 0) * 1.6, 1) * 0.62)); box-shadow: 0 50px 120px -30px rgb(0 0 0 / 0.8), 0 0 0 1px rgb(201 163 90 / 0.5); will-change: transform; }
+  .beat2 { max-width: min(26rem, 30vw); text-shadow: 0 2px 24px rgb(0 0 0 / 0.75); isolation: isolate; }
+  .beat2::before { content: ""; position: absolute; inset: -5rem -7rem; z-index: -1; background: radial-gradient(closest-side, rgb(10 6 5 / 0.6) 30%, transparent); }
+
+  /* pour: the age stands behind the glass */
+  .act-pour [data-sc-stage] { background: #050404; }
+  .age { position: absolute; inset: 0; z-index: 0; display: grid; place-items: center; font: 600 clamp(22rem, 62vw, 64rem)/0.8 var(--sc-font-display); color: #2a1a10; letter-spacing: -0.04em; transform: scale(calc(1.25 - var(--sc-p, 0) * 0.25)); pointer-events: none; }
+  .act-pour video[data-sc-scrub], .act-pour .sc-stage__poster { mix-blend-mode: screen; z-index: 1; }
+
+  @media (max-width: 860px) {
+    .name { flex-direction: column; gap: 52svh; }
+    .name__w { font-size: 30vw; transform: translateY(calc(var(--sc-p, 0) * var(--dir) * 40vh)); }
+    .h-bottle video, .h-bottle .sc-stage__poster { object-fit: contain !important; }
+    .h-tag { display: none; }
+    .name { gap: 58svh; }
+    .callout { display: none; }
+    .h-title { font-size: 3.6rem; bottom: 5rem; }
+    .arch { height: 74svh; }
+    .beat2 { max-width: none; top: 12vh; bottom: auto; padding: 1rem 1.2rem; border-radius: 0.8rem; background: rgb(8 6 6 / 0.6); backdrop-filter: blur(6px); }
+    .outline-word { font-size: 40vw; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #intro { display: none; } .name__w span { transform: none; transition: none; }
+  }
 </style>
 </head>
 <body>
@@ -134,22 +202,52 @@
   <a class="btn btn--ghost" href="https://www.kosherwine.co.uk/miltonduff-2009-16-year-old-old-hill-spirits-p18588" rel="noopener">Buy the bottle</a>
 </header>
 
+<div id="intro" aria-hidden="true">
+  <div class="intro__mark"><span>O</span><span>L</span><span>D</span><span>&nbsp;</span><span>H</span><span>I</span><span>L</span><span>L</span></div>
+  <div class="intro__line"></div>
+  <p class="intro__sub">Signature Cask Series</p>
+</div>
+<canvas id="dust" aria-hidden="true"></canvas>
+
 <main id="top">
 
-  <!-- 1 · ARRIVAL: scrub, the bottle on the ridge at last light -->
-  <section data-sc-act="scrub" data-sc-span="2.4" data-sc-dwell="0.3" data-sc-drift="#0d0b0b">
+  <!-- 1 · ARRIVAL: the bottle turns between the two halves of the name -->
+  <section class="act-hero" data-sc-act="scrub" data-sc-span="3.2" data-sc-dwell="0.18" data-sc-drift="#0a0706">
     <div data-sc-stage>
-      <img class="hero-plate" src="assets/hero-plate.webp" alt="" data-sc-parallax="-0.06">
-      <div class="hero-window">
+      <canvas class="ember" id="ember" aria-hidden="true"></canvas>
+      <div class="name" aria-hidden="true">
+        <span class="name__w name__w--l"><span>O</span><span>L</span><span>D</span></span>
+        <span class="name__w name__w--r"><span>H</span><span>I</span><span>L</span><span>L</span></span>
+      </div>
+      <div class="h-bottle">
+        <img class="sc-stage__poster" src="assets/turn-poster.webp" alt="">
+        <video data-sc-scrub data-sc-src="assets/turn.mp4" data-sc-src-mobile="assets/turn-m.mp4" muted playsinline
+               aria-label="The Miltonduff 2009 bottle turning slowly in warm light"></video>
+      </div>
+      <div class="callout callout--l" data-sc-cue="0.3 0.86"><b>Miltonduff</b><span>Distilled 2009</span></div>
+      <div class="callout callout--r" data-sc-cue="0.36 0.86"><b>16 Years</b><span>Single cask · 46%</span></div>
+      <p class="h-tag" data-sc-cue="0 0.26 0">Signature Cask Series · One of 306 bottles</p>
+      <h1 class="h-title" data-sc-cue="0.44 1 0.2 0.04" data-sc-kinetic="words">Aged. Rare. <span class="gold">Kosher.</span></h1>
+    </div>
+  </section>
+
+  <!-- 1b · THE HILL: an arch opens onto the ridge at last light -->
+  <section class="act-hill" data-sc-act="scrub" data-sc-span="2.8" data-sc-dwell="0.2" data-sc-drift="#140b08">
+    <div data-sc-stage>
+      <img class="sky" src="assets/sky-plate.webp" alt="" aria-hidden="true">
+      <div class="hill-vig" aria-hidden="true"></div>
+      <div class="outline-word" aria-hidden="true">THE HILL</div>
+      <div class="arch">
         <img class="sc-stage__poster" src="assets/hero-poster.webp" alt="">
         <video data-sc-scrub data-sc-src="assets/hero.mp4" muted playsinline
-               aria-label="The Miltonduff 2009 bottle and its gift box on a mountain ridge at sunset"></video>
+               aria-label="The bottle and its gift box on a mountain ridge as the sun sets"></video>
       </div>
-      <div class="hero-scrim" aria-hidden="true"></div>
-      <div class="sc-copy sc-copy--lead hero-copy" data-sc-cue="0 0.82 0">
-        <p class="eyebrow">Signature Cask Series</p>
-        <h1 class="sc-display" data-sc-kinetic="lines">Aged.<br>Rare.<br><span class="gold">Kosher.</span></h1>
-        <p class="sc-body">Miltonduff 2009. Sixteen years in a single first fill bourbon barrel, and one of only 306 bottles.</p>
+      <div class="sc-copy sc-copy--lead beat2" data-sc-cue="0.08 0.56">
+        <p class="eyebrow">Our story</p>
+        <h2 class="sc-display sc-display--lg" data-sc-kinetic="lines">Patience <span class="gold">is the recipe.</span></h2>
+      </div>
+      <div class="sc-copy sc-copy--trail beat2" data-sc-cue="0.5 1 0.16 0.04">
+        <h2 class="sc-display sc-display--lg" data-sc-kinetic="lines">It rests in oak <span class="gold">until it is ready.</span></h2>
       </div>
     </div>
   </section>
@@ -187,8 +285,9 @@
   </section>
 
   <!-- 4 · THE POUR: scrub, the peak. Largest span on the page. -->
-  <section data-sc-act="scrub" data-sc-span="3.4" data-sc-dwell="0.26" data-sc-drift="#050404">
+  <section class="act-pour" data-sc-act="scrub" data-sc-span="3.4" data-sc-dwell="0.26" data-sc-drift="#050404">
     <div data-sc-stage>
+      <div class="age" aria-hidden="true">16</div>
       <img class="sc-stage__poster" src="assets/pour-poster.webp" alt="">
       <video data-sc-scrub data-sc-src="assets/pour.mp4" data-sc-src-mobile="assets/pour-m.mp4" muted playsinline
              aria-label="Whisky pouring into a nosing glass in slow motion"></video>
@@ -234,8 +333,80 @@
 
 </main>
 
+<script src="lenis.min.js"></script>
 <script src="scrollcraft.js"></script>
+<script>
+/* intro, smooth scroll, then the engine */
+(function () {
+  var root = document.documentElement, reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.intro__mark span, .name__w span').forEach(function (el, i, all) { el.style.setProperty('--i', i % 8); el.style.transitionDelay = (i % 8) * 60 + 'ms'; });
+  if (!reduce) { root.classList.add('is-intro'); }
+  function open() { root.classList.remove('is-intro'); setTimeout(function () { root.classList.add('is-ready'); }, 250); }
+  var t0 = Date.now();
+  addEventListener('load', function () { setTimeout(open, Math.max(0, 1900 - (Date.now() - t0))); });
+  setTimeout(open, 4200);
+  if (reduce) { root.classList.add('is-ready'); return; }
+  if (window.Lenis) {
+    var lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+    (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(performance.now());
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) { a.addEventListener('click', function (e) { var id = a.getAttribute('href'); if (id.length > 1 && document.querySelector(id)) { e.preventDefault(); lenis.scrollTo(id); } }); });
+  }
+})();
+</script>
 <script>ScrollCraft.mount(document.body);</script>
+<script>
+/* Ember: a slow golden haze behind the hero, drawn in WebGL. No asset, no download. */
+(function () {
+  var c = document.getElementById('ember'); if (!c) return;
+  var gl = c.getContext('webgl', { premultipliedAlpha: false, antialias: false }); if (!gl) return;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+  var fs = 'precision mediump float;uniform vec2 r;uniform float t;uniform float s;'+
+    'float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}'+
+    'float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}'+
+    'float fb(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*n(p);p*=2.03;a*=.5;}return v;}'+
+    'void main(){vec2 uv=gl_FragCoord.xy/r;vec2 q=uv*vec2(r.x/r.y,1.)*2.2;'+
+    'float f=fb(q+vec2(t*.03,-t*.06)+fb(q*1.7-vec2(0.,t*.05)));'+
+    'float glow=smoothstep(1.15,0.,length((uv-vec2(.5,.08))*vec2(1.2,1.6)));'+
+    'float v=f*glow*(1.0+s*.25);'+
+    'vec3 col=mix(vec3(.03,.02,.02),vec3(.85,.48,.16),v)+vec3(1.,.75,.4)*pow(v,3.)*.3;'+
+    'gl_FragColor=vec4(col,1.);}';
+  function sh(type, src) { var o = gl.createShader(type); gl.shaderSource(o, src); gl.compileShader(o); return o; }
+  var pr = gl.createProgram(); gl.attachShader(pr, sh(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr); gl.useProgram(pr);
+  var b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
+  var loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+  var ur = gl.getUniformLocation(pr, 'r'), ut = gl.getUniformLocation(pr, 't'), us = gl.getUniformLocation(pr, 's');
+  var act = c.closest('[data-sc-act]'), vis = true;
+  new IntersectionObserver(function (e) { vis = e[0].isIntersecting; }).observe(act);
+  function size() { var d = Math.min(devicePixelRatio, 1.5) * 0.5; c.width = c.clientWidth * d; c.height = c.clientHeight * d; gl.viewport(0, 0, c.width, c.height); }
+  size(); addEventListener('resize', size);
+  (function frame(ms) {
+    if (vis) { gl.uniform2f(ur, c.width, c.height); gl.uniform1f(ut, reduce ? 4 : ms / 1000); gl.uniform1f(us, parseFloat(getComputedStyle(act).getPropertyValue('--sc-p')) || 0); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); }
+    if (!reduce) requestAnimationFrame(frame);
+  })(0);
+})();
+/* Dust: gold motes drifting in the light, the whole way down. */
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var c = document.getElementById('dust'), x = c.getContext('2d'), P = [], w, h, last = scrollY, v = 0;
+  function size() { var d = Math.min(devicePixelRatio, 2); w = c.width = innerWidth * d; h = c.height = innerHeight * d; }
+  size(); addEventListener('resize', size);
+  var N = innerWidth < 860 ? 34 : 70;
+  for (var i = 0; i < N; i++) P.push({ x: Math.random(), y: Math.random(), r: Math.random() * 1.6 + 0.4, s: Math.random() * 0.3 + 0.1, a: Math.random() * 6.28 });
+  (function f() {
+    var y = scrollY; v += ((y - last) - v) * 0.1; last = y;
+    x.clearRect(0, 0, w, h);
+    for (var i = 0; i < P.length; i++) {
+      var p = P[i]; p.a += 0.01; p.y -= (p.s * 0.0006 + v * 0.00004 * p.s); p.x += Math.sin(p.a) * 0.0002;
+      if (p.y < -0.02) p.y = 1.02; if (p.y > 1.02) p.y = -0.02;
+      var al = 0.35 + 0.35 * Math.sin(p.a * 2);
+      x.beginPath(); x.arc(p.x * w, p.y * h, p.r * (w / innerWidth), 0, 6.28);
+      x.fillStyle = 'rgba(232,190,120,' + al.toFixed(3) + ')'; x.fill();
+    }
+    requestAnimationFrame(f);
+  })();
+})();
+</script>
 <script>
 /* Signature move: the closing bottle turns under the hand, not the wheel.
    Pointer x (or a horizontal drag on touch) sets the target angle; with no hand
