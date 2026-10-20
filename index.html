@@ -188,7 +188,7 @@
   .outline-word { position: absolute; z-index: 1; top: 50%; left: 0; translate: 0 -50%; white-space: nowrap; font: 600 clamp(8rem, 24vw, 26rem)/0.8 var(--sc-font-display); color: transparent; -webkit-text-stroke: 1.5px rgb(255 214 150 / 0.55); transform: translateX(calc(30vw - var(--sc-p, 0) * 90vw)); pointer-events: none; }
   .arch { position: absolute; z-index: 2; left: 50%; top: 50%; height: 90svh; aspect-ratio: 9 / 16; border-radius: 999px 999px 1rem 1rem; overflow: hidden;
     translate: -50% -50%; transform: scale(calc(0.38 + min(var(--sc-p, 0) * 1.6, 1) * 0.62)); box-shadow: 0 50px 120px -30px rgb(0 0 0 / 0.8), 0 0 0 1px rgb(201 163 90 / 0.5); will-change: transform; }
-  .beat2 { max-width: min(26rem, 30vw); text-shadow: 0 2px 24px rgb(0 0 0 / 0.75); isolation: isolate; }
+  .beat2 { max-width: min(26rem, 30vw); text-shadow: 0 1px 3px rgb(0 0 0 / 0.9), 0 2px 24px rgb(0 0 0 / 0.85); isolation: isolate; }
   .beat2::before { content: ""; position: absolute; inset: -5rem -7rem; z-index: -1; background: radial-gradient(closest-side, rgb(10 6 5 / 0.6) 30%, transparent); }
 
   /* pour: the age stands behind the glass */
@@ -200,6 +200,7 @@
     .name { flex-direction: column; gap: 52svh; }
     .name__w { font-size: 30vw; transform: translateY(calc(var(--sc-p, 0) * var(--dir) * 40vh)); }
     .h-bottle { height: 60svh; top: 48%; }
+    .site-bar { min-height: 6.5rem; align-items: flex-start; background: linear-gradient(180deg, rgb(10 7 6 / 0.94), rgb(10 7 6 / 0.8) 55%, transparent); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent); mask-image: linear-gradient(180deg, #000 60%, transparent); }
     .h-tag { display: none; }
     .name { gap: 58svh; }
     .callout { display: none; }
@@ -282,17 +283,17 @@
   <section data-sc-act="pin" data-sc-span="3" data-sc-drift="#2a0f15">
     <div data-sc-stage class="record">
       <div class="giant" aria-hidden="true">MILTONDUFF · SPEYSIDE · MILTONDUFF · SPEYSIDE</div>
-      <p data-sc-cue="0 0.28 0">Distilled at Miltonduff, Speyside. <em>November 2009.</em></p>
-      <p data-sc-cue="0.24 0.52">Sixteen years in one <em>first fill bourbon barrel.</em></p>
-      <p data-sc-cue="0.48 0.76">No chill filtration. <em>No colouring.</em></p>
-      <p data-sc-cue="0.72 1 0.12 0.04">One cask. <em>306 bottles.</em></p>
+      <p data-sc-cue="0 0.24 0 0.12">Distilled at Miltonduff, Speyside. <em>November 2009.</em></p>
+      <p data-sc-cue="0.26 0.5 0.12 0.12">Sixteen years in one <em>first fill bourbon barrel.</em></p>
+      <p data-sc-cue="0.52 0.74 0.12 0.12">No chill filtration. <em>No colouring.</em></p>
+      <p data-sc-cue="0.76 1 0.12 0.04">One cask. <em>306 bottles.</em></p>
     </div>
   </section>
 
   <!-- 3 · THE STANDARD: flow + reveal -->
   <section class="sc-section kosher" data-sc-act="flow" data-sc-drift="#0d0b0b">
     <div class="sc-wrap split">
-      <figure data-sc-reveal="up" data-sc-reveal-at="0.08 0.45">
+      <figure data-sc-reveal="up" data-sc-reveal-at="0 0.32">
         <img src="assets/glass-mountain.webp" width="1240" height="1070" loading="lazy"
              alt="An Old Hill Spirits nosing glass of whisky held up against mountains at sunset">
       </figure>
