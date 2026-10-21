@@ -1,0 +1,457 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Old Hill Spirits · Miltonduff 2009, 16 Years</title>
+<meta name="description" content="Miltonduff 2009, a 16 year old single malt from one first fill bourbon barrel. One of 306 bottles. A first for kosher whisky.">
+<meta name="theme-color" content="#0d0b0b">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230d0b0b'/><path d='M6 22c5-6 15-6 20 0' stroke='%23c9a35a' stroke-width='2.4' fill='none'/></svg>">
+<meta property="og:title" content="Old Hill Spirits · Miltonduff 2009, 16 Years">
+<meta property="og:description" content="A first for kosher whisky. One cask, 306 bottles.">
+<meta property="og:image" content="assets/og.jpg">
+<script>if (!matchMedia('(prefers-reduced-motion: reduce)').matches) document.documentElement.classList.add('is-intro');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,500;0,600;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="scrollcraft.css">
+<style>
+  :root {
+    --sc-canvas:     #0d0b0b;
+    --sc-surface:    #1a1012;
+    --sc-ink:        #f6eee2;
+    --sc-ink-soft:   #c4b6a4;
+    --sc-accent:     #c9a35a;
+    --sc-accent-ink: #160d08;
+    --sc-font-display: "Cormorant", Georgia, serif;
+    --sc-font-text:    "Montserrat", system-ui, sans-serif;
+    --burgundy: #6e1f2c;
+    --gold-soft: #e3c88f;
+  }
+  body { background: var(--sc-canvas); }
+  .sc-display { font-weight: 600; letter-spacing: -0.01em; line-height: 0.98; }
+  .mark { font-family: var(--sc-font-display); font-weight: 600; letter-spacing: 0.06em; line-height: 1; color: var(--sc-ink); text-decoration: none; display: inline-flex; flex-direction: column; }
+  .mark small { font-family: var(--sc-font-text); font-size: 0.56rem; letter-spacing: 0.5em; color: var(--sc-accent); margin-top: 0.3em; font-weight: 500; }
+  .mark span { font-size: 1.35rem; }
+  .eyebrow { font-family: var(--sc-font-text); font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--sc-accent); margin: 0 0 1.1rem; font-weight: 600; }
+  .gold { color: var(--gold-soft); font-style: italic; font-weight: 500; }
+
+  /* header */
+  .site-bar { background: linear-gradient(180deg, rgb(10 7 6 / 0.82), rgb(10 7 6 / 0.45) 60%, transparent); position: fixed; z-index: 60; inset: 0 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 1.1rem var(--sc-gutter); pointer-events: none; }
+  .site-bar > * { pointer-events: auto; }
+  .btn { display: inline-flex; align-items: center; gap: 0.6em; min-height: 44px; padding: 0.8rem 1.4rem; border-radius: 999px; font: 600 0.78rem/1 var(--sc-font-text); letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease; }
+  .btn--ghost { color: var(--sc-ink); border: 1px solid color-mix(in oklab, var(--sc-ink) 40%, transparent); background: color-mix(in oklab, var(--sc-canvas) 35%, transparent); backdrop-filter: blur(8px); }
+  .btn--ghost:hover { border-color: var(--sc-accent); color: var(--gold-soft); }
+  .btn--gold { background: var(--sc-accent); color: var(--sc-accent-ink); border: 1px solid var(--sc-accent); }
+  .btn--gold:hover { background: var(--gold-soft); }
+  .btn:focus-visible, a:focus-visible { outline: 2px solid var(--gold-soft); outline-offset: 3px; }
+
+  /* 1 · hero: the clip stands in a tall arch, the hill outside it is its own blurred plate */
+  .hero-plate { position: absolute; inset: -6%; width: 112%; height: 112%; object-fit: cover; }
+  .hero-window { position: absolute; z-index: 2; right: clamp(2rem, 9vw, 10rem); top: 50%; translate: 0 -50%;
+    height: min(84svh, 860px); aspect-ratio: 9 / 16; border-radius: 999px 999px 1.25rem 1.25rem; overflow: hidden;
+    box-shadow: 0 40px 80px -30px rgb(0 0 0 / 0.75), 0 0 0 1px color-mix(in oklab, var(--sc-accent) 45%, transparent); }
+  .hero-window::after { content: ""; position: absolute; inset: 0; border-radius: inherit; box-shadow: inset 0 0 0 6px rgb(13 11 11 / 0.25); pointer-events: none; z-index: 3; }
+  .hero-copy { max-width: min(38rem, 48vw); text-shadow: 0 2px 24px rgb(0 0 0 / 0.55); }
+  .hero-scrim { position: absolute; inset: 0; z-index: 3; pointer-events: none; background: linear-gradient(90deg, rgb(13 11 11 / 0.82) 0%, rgb(13 11 11 / 0.55) 38%, transparent 62%); }
+  .hero-copy h1 { font-size: clamp(3.4rem, 8.2vw, 8.6rem); }
+  .hero-copy .sc-body { margin-top: 1.4rem; color: #e9dccb; max-width: 30rem; }
+
+  /* 2 · the record: lines assemble over burgundy */
+  .record { display: grid; place-items: center; padding: 0 var(--sc-gutter); }
+  .record p { position: absolute; left: 50%; top: 50%; translate: -50% -50%; width: min(88vw, 18ch); text-align: center; font: 500 clamp(2.4rem, 5.6vw, 5.4rem)/1.04 var(--sc-font-display); margin: 0; color: var(--sc-ink); }
+  .giant { position: absolute; top: 50%; left: 0; white-space: nowrap; translate: 0 -50%;
+    transform: translateX(calc(10vw - var(--sc-p, 0) * 140vw)); will-change: transform;
+    font: 600 clamp(9rem, 26vw, 26rem)/0.8 var(--sc-font-display); letter-spacing: -0.02em;
+    color: transparent; -webkit-text-stroke: 1px color-mix(in oklab, var(--sc-accent) 55%, transparent); pointer-events: none; }
+  .record p em { color: var(--gold-soft); }
+  .record .small { font: 600 0.8rem/1.6 var(--sc-font-text); letter-spacing: 0.3em; text-transform: uppercase; color: var(--sc-accent); bottom: 12vh; position: absolute; }
+
+  /* 3 · kosher: the one act that reads like a page */
+  .kosher { padding-block: clamp(6rem, 16vh, 12rem); }
+  .kosher .split { display: grid; grid-template-columns: 1.05fr 1fr; gap: clamp(2rem, 6vw, 6rem); align-items: center; }
+  .kosher figure { margin: 0; border-radius: 1rem; overflow: hidden; aspect-ratio: 4 / 5; }
+  .kosher figure img { width: 100%; height: 100%; object-fit: cover; }
+  .facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem 2rem; margin-top: 2.6rem; padding-top: 2rem; border-top: 1px solid color-mix(in oklab, var(--sc-accent) 35%, transparent); }
+  .facts dt { font: 600 0.68rem/1.4 var(--sc-font-text); letter-spacing: 0.24em; text-transform: uppercase; color: var(--sc-ink-soft); }
+  .facts dd { margin: 0.3rem 0 0; font: 600 2.2rem/1 var(--sc-font-display); color: var(--sc-ink); }
+  .facts dd.big { color: var(--gold-soft); }
+
+  /* 4 · the pour: the peak */
+  .pour-copy { text-align: center; }
+  .beat { max-width: min(26rem, 28vw); text-shadow: 0 2px 20px rgb(0 0 0 / 0.8); isolation: isolate; }
+  .beat::before, .pour-copy::before { content: ""; position: absolute; inset: -4rem -6rem; z-index: -1; background: radial-gradient(closest-side, rgb(5 4 4 / 0.9) 40%, transparent); pointer-events: none; }
+  .pour-copy { isolation: isolate; }
+  @media (max-width: 860px) {
+    .beat { max-width: none; top: 12vh !important; padding: 1rem 1.2rem; border-radius: 0.8rem; background: rgb(8 6 6 / 0.62); backdrop-filter: blur(6px); }
+    .beat::before, .pour-copy::before { display: none; }
+    .pour-copy { left: var(--sc-gutter) !important; right: var(--sc-gutter); translate: none !important; padding: 1rem; border-radius: 0.8rem; background: rgb(8 6 6 / 0.62); backdrop-filter: blur(6px); }
+    .pour-copy h2 { font-size: 2.6rem; }
+    .hero-copy { top: calc(4.8rem + env(safe-area-inset-top)); bottom: auto; }
+    .hero-scrim { background: linear-gradient(180deg, rgb(13 11 11 / 0.94) 0%, rgb(13 11 11 / 0.8) 38%, transparent 60%); }
+  }
+  .pour-copy h2 { font-size: clamp(2.8rem, 7vw, 7rem); }
+  .pour-copy p { margin: 1rem auto 0; }
+
+  /* 5 · close: the turntable, the signature move */
+  .close { display: grid; grid-template-columns: 1fr 1fr; align-items: center; padding: 0 var(--sc-gutter); background: radial-gradient(60% 70% at 70% 50%, #2a1416 0%, var(--sc-canvas) 70%); }
+  .turntable { position: relative; height: min(88svh, 900px); aspect-ratio: 3 / 4; justify-self: center; cursor: grab; touch-action: pan-y; user-select: none; -webkit-user-select: none; }
+  .turntable:active { cursor: grabbing; }
+  .turntable { -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); mask-image: radial-gradient(closest-side, #000 72%, transparent 100%); }
+  .turntable video, .turntable img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .turntable video { opacity: 0; transition: opacity 400ms ease; }
+  .turntable.is-live video { opacity: 1; }
+  .turn-hint { position: absolute; z-index: 2; left: 50%; bottom: 12%; translate: -50% 0; font: 600 0.66rem/1 var(--sc-font-text); letter-spacing: 0.3em; text-transform: uppercase; color: var(--sc-ink-soft); white-space: nowrap; }
+  .turn-hint::before, .turn-hint::after { content: ""; display: inline-block; width: 2.2rem; height: 1px; background: currentColor; vertical-align: middle; margin: 0 0.8rem; opacity: 0.6; }
+  .close__copy h2 { font-size: clamp(2.8rem, 5.6vw, 5.8rem); }
+  .lamp { justify-self: center; display: grid; justify-items: center; gap: 1.4rem; }
+  .lamp__bottle { position: relative; height: min(74svh, 760px); aspect-ratio: 422 / 1788; transform: perspective(900px) rotateY(calc(var(--lx, 0) * 10deg)); transition: transform 300ms ease-out; }
+  .lamp__bottle img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 34px 40px rgb(0 0 0 / 0.6)); }
+  .lamp__light { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
+    -webkit-mask: url(assets/bottle.webp) center / contain no-repeat; mask: url(assets/bottle.webp) center / contain no-repeat;
+    background: radial-gradient(40% 22% at calc(50% + var(--lx, 0) * 60%) calc(42% + var(--ly, 0) * 40%), rgb(255 230 180 / 0.75), transparent 70%); }
+  .lamp__hint { font: 600 0.66rem/1 var(--sc-font-text); letter-spacing: 0.3em; text-transform: uppercase; color: var(--sc-ink-soft); white-space: nowrap; }
+  .lamp__hint::before, .lamp__hint::after { content: ""; display: inline-block; width: 2.2rem; height: 1px; background: currentColor; vertical-align: middle; margin: 0 0.8rem; opacity: 0.6; }
+  .price { display: flex; align-items: baseline; gap: 1rem; margin: 1.8rem 0 2rem; }
+  .price strong { font: 600 2.6rem/1 var(--sc-font-display); color: var(--gold-soft); }
+  .price s { color: var(--sc-ink-soft); font-size: 0.95rem; }
+  .foot { position: absolute; left: var(--sc-gutter); right: var(--sc-gutter); bottom: 1.1rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1.6rem; justify-content: space-between; font: 400 0.72rem/1.6 var(--sc-font-text); color: var(--sc-ink-soft); }
+  .foot a { color: inherit; }
+
+  @media (max-width: 860px) {
+    .hero-window { inset: 0; translate: none; height: 100%; width: 100%; aspect-ratio: auto; border-radius: 0; box-shadow: none; }
+    .hero-window::after { display: none; }
+    .hero-plate { display: none; }
+    .hero-copy { max-width: none; }
+    .hero-copy h1 { font-size: clamp(3rem, 15vw, 4.6rem); }
+    .kosher .split { grid-template-columns: 1fr; }
+    .kosher figure { aspect-ratio: 4 / 3; }
+    .close { grid-template-columns: 1fr; grid-template-rows: 1fr auto; padding-top: 4.5rem; padding-bottom: 6.5rem; }
+    .lamp__bottle { height: 38svh; } .lamp { gap: 0.6rem; } .lamp__hint { display: none; }
+    .close { padding-top: 4.2rem; padding-bottom: 8.5rem; gap: 0.6rem; } .foot { bottom: 0.6rem; gap: 0.1rem 1rem; line-height: 1.45; }
+    .close__copy { text-align: center; }
+    .close__copy h2 { font-size: 2.6rem; }
+    .price { justify-content: center; margin: 0.8rem 0 1.2rem; }
+    .foot { justify-content: center; text-align: center; font-size: 0.66rem; }
+    .site-bar .btn { padding: 0.7rem 1rem; font-size: 0.68rem; }
+  }
+
+  /* ---------- v2 ---------- */
+  html.is-intro body { overflow: hidden; }
+  #intro { position: fixed; inset: 0; z-index: 100; background: #070505; display: grid; place-content: center; justify-items: center; gap: 1.2rem; transition: opacity 600ms ease, visibility 0s 600ms; }
+  html:not(.is-intro) #intro { opacity: 0; visibility: hidden; }
+  .intro__mark { font: 600 clamp(3rem, 9vw, 7rem)/1 var(--sc-font-display); letter-spacing: 0.08em; color: var(--sc-ink); display: flex; overflow: hidden; }
+  .intro__mark span { display: inline-block; transform: translateY(110%); animation: rise 900ms cubic-bezier(.2,.8,.1,1) forwards; }
+  .intro__mark span:nth-child(n) { animation-delay: calc(var(--i, 0) * 70ms + 150ms); }
+  .intro__line { width: min(60vw, 26rem); height: 1px; background: var(--sc-accent); transform: scaleX(0); transform-origin: left; animation: grow 1500ms 400ms cubic-bezier(.6,0,.2,1) forwards; }
+  .intro__sub { margin: 0; font: 600 0.7rem/1 var(--sc-font-text); letter-spacing: 0.5em; text-transform: uppercase; color: var(--sc-accent); opacity: 0; animation: fade 800ms 900ms forwards; }
+  @keyframes rise { to { transform: none; } }
+  @keyframes grow { to { transform: scaleX(1); } }
+  @keyframes fade { to { opacity: 1; } }
+  #dust { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 30; pointer-events: none; mix-blend-mode: screen; }
+
+  /* hero */
+  .act-hero [data-sc-stage] { background: #070505; }
+  .ember { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; }
+  .name { position: absolute; inset: 0; z-index: 1; display: flex; align-items: center; justify-content: center; gap: clamp(9rem, 22vw, 26rem); pointer-events: none; }
+  .name__w { display: flex; padding: 0.06em 0.02em; font: 600 clamp(6rem, 21vw, 24rem)/0.82 var(--sc-font-display); letter-spacing: -0.02em; color: #d8b26a;
+    transform: translateX(calc(var(--sc-p, 0) * var(--dir) * 38vw)) scale(calc(1 + var(--sc-p, 0) * 0.12)); opacity: calc(1 - var(--sc-p, 0) * 1.6); will-change: transform, opacity; }
+  .name__w--l { --dir: -1; } .name__w--r { --dir: 1; }
+  .name__w span { display: inline-block; opacity: 0; transform: translateY(40%) rotateX(-60deg); transition: transform 1200ms cubic-bezier(.2,.8,.1,1), opacity 900ms ease; }
+  html.is-ready .name__w span { transform: none; opacity: 1; }
+  .h-bottle { position: absolute; z-index: 2; left: 50%; top: 52%; height: min(76svh, 820px); aspect-ratio: 422 / 1788; translate: -50% -50%; perspective: 900px;
+    transform: translateY(calc((1 - var(--sc-p, 0)) * 4vh)) scale(calc(0.96 + var(--sc-p, 0) * 0.1)); transform-origin: 50% 80%; will-change: transform; }
+  .h-bottle__tilt { position: absolute; inset: 0; transform: rotateY(calc(-14deg + var(--sc-p, 0) * 28deg)) rotateZ(calc(-1.5deg + var(--sc-p, 0) * 3deg)); transform-style: preserve-3d; transition: transform 120ms linear; }
+  .h-cut { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 30px 40px rgb(0 0 0 / 0.55)); opacity: 0; transform: translateY(6%); transition: opacity 900ms ease, transform 1200ms cubic-bezier(.2,.8,.1,1); }
+  html:not(.is-intro) .h-cut { opacity: 1; transform: none; }
+  .h-sheen { position: absolute; inset: 0; pointer-events: none; mix-blend-mode: screen;
+    -webkit-mask: url(assets/bottle.webp) center / contain no-repeat; mask: url(assets/bottle.webp) center / contain no-repeat;
+    background: linear-gradient(100deg, transparent 35%, rgb(255 236 200 / 0.26) 48%, rgb(255 236 200 / 0.06) 54%, transparent 62%) no-repeat;
+    background-size: 300% 100%; background-position: calc(110% - var(--sc-p, 0) * 120%) 0; opacity: 0.9; }
+  .h-shadow { position: absolute; left: -30%; right: -30%; bottom: -3%; height: 7%; border-radius: 50%; background: radial-gradient(closest-side, rgb(0 0 0 / 0.9), rgb(0 0 0 / 0.4) 55%, transparent); filter: blur(6px); z-index: -1; }
+  .exit-fade { position: absolute; inset: 0; z-index: 40; pointer-events: none; background: var(--fade-to, #0d0b0b); opacity: min(0.55, calc((var(--sc-p, 0) - 0.9) * 6)); }
+  .h-tag { position: absolute; z-index: 5; left: 50%; top: calc(4.6rem + 3vh); translate: -50% 0; margin: 0; white-space: nowrap; font: 600 0.72rem/1 var(--sc-font-text); letter-spacing: 0.36em; text-transform: uppercase; color: var(--sc-accent); }
+  .h-title::before { content: ""; position: absolute; inset: -40% 10%; z-index: -1; background: radial-gradient(closest-side, rgb(7 5 5 / 0.85), transparent); }
+  .h-tag { text-shadow: 0 1px 12px #000; } .h-tag::before { content: ""; position: absolute; inset: -1.2rem -3rem; z-index: -1; background: radial-gradient(closest-side, rgb(7 5 5 / 0.9), transparent); }
+  .h-title { isolation: isolate; position: absolute; z-index: 5; left: 0; right: 0; bottom: clamp(2rem, 8vh, 6rem); margin: 0; text-align: center; font: 600 clamp(3rem, 9.5vw, 10rem)/0.9 var(--sc-font-display); letter-spacing: -0.02em; color: var(--sc-ink); text-shadow: 0 6px 40px rgb(0 0 0 / 0.7); }
+  .callout { position: absolute; z-index: 5; top: 42%; display: grid; gap: 0.35rem; font: 500 0.78rem/1.3 var(--sc-font-text); letter-spacing: 0.18em; text-transform: uppercase; color: var(--sc-ink-soft); }
+  .callout b { font: 600 clamp(1.6rem, 2.6vw, 2.6rem)/1 var(--sc-font-display); letter-spacing: 0; text-transform: none; color: var(--sc-ink); }
+  .callout::before { content: ""; position: absolute; top: 1.1rem; width: clamp(3rem, 9vw, 9rem); height: 1px; background: linear-gradient(90deg, var(--sc-accent), transparent); }
+  .callout--l { right: calc(50% + clamp(9rem, 15vw, 16rem)); text-align: right; }
+  .callout--l::before { left: calc(100% + 1rem); }
+  .callout--r { left: calc(50% + clamp(9rem, 15vw, 16rem)); }
+  .callout--r::before { right: calc(100% + 1rem); transform: scaleX(-1); }
+
+  /* hill */
+  .sky { position: absolute; inset: -8%; width: 116%; height: 116%; object-fit: cover; transform: translateY(calc(var(--sc-p, 0) * -6vh)) scale(calc(1.15 - var(--sc-p, 0) * 0.15)); }
+  .hill-vig { position: absolute; inset: 0; z-index: 1; background: radial-gradient(70% 80% at 50% 45%, transparent 30%, rgb(10 6 5 / 0.85) 100%); }
+  .outline-word { position: absolute; z-index: 1; top: 50%; left: 0; translate: 0 -50%; white-space: nowrap; font: 600 clamp(8rem, 24vw, 26rem)/0.8 var(--sc-font-display); color: transparent; -webkit-text-stroke: 1.5px rgb(255 214 150 / 0.55); transform: translateX(calc(30vw - var(--sc-p, 0) * 90vw)); pointer-events: none; }
+  .arch { position: absolute; z-index: 2; left: 50%; top: 50%; height: 90svh; aspect-ratio: 9 / 16; border-radius: 999px 999px 1rem 1rem; overflow: hidden;
+    translate: -50% -50%; transform: scale(calc(0.38 + min(var(--sc-p, 0) * 1.6, 1) * 0.62)); box-shadow: 0 50px 120px -30px rgb(0 0 0 / 0.8), 0 0 0 1px rgb(201 163 90 / 0.5); will-change: transform; }
+  .beat2 { max-width: min(26rem, 30vw); text-shadow: 0 1px 3px rgb(0 0 0 / 0.9), 0 2px 24px rgb(0 0 0 / 0.85); isolation: isolate; }
+  .beat2::before { content: ""; position: absolute; inset: -5rem -7rem; z-index: -1; background: radial-gradient(closest-side, rgb(10 6 5 / 0.6) 30%, transparent); }
+
+  /* pour: the age stands behind the glass */
+  .act-pour [data-sc-stage] { background: #050404; }
+  .age { position: absolute; inset: 0; z-index: 0; display: grid; place-items: center; font: 600 clamp(22rem, 62vw, 64rem)/0.8 var(--sc-font-display); color: #2a1a10; letter-spacing: -0.04em; transform: scale(calc(1.25 - var(--sc-p, 0) * 0.25)); pointer-events: none; }
+  .act-pour video[data-sc-scrub], .act-pour .sc-stage__poster { mix-blend-mode: screen; z-index: 1; }
+
+  @media (max-width: 860px) {
+    .name { flex-direction: column; gap: 52svh; }
+    .name__w { font-size: 30vw; transform: translateY(calc(var(--sc-p, 0) * var(--dir) * 40vh)); }
+    .h-bottle { height: 60svh; top: 48%; }
+    .site-bar { min-height: 6.5rem; align-items: flex-start; background: linear-gradient(180deg, rgb(10 7 6 / 0.94), rgb(10 7 6 / 0.8) 55%, transparent); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); -webkit-mask-image: linear-gradient(180deg, #000 60%, transparent); mask-image: linear-gradient(180deg, #000 60%, transparent); }
+    .h-tag { display: none; }
+    .name { gap: 58svh; }
+    .callout { display: none; }
+    .h-title { font-size: 10.5vw; bottom: 1.6rem; padding: 0 1rem; }
+    .arch { height: 74svh; }
+    .beat2 { max-width: none; top: 12vh; bottom: auto; padding: 1rem 1.2rem; border-radius: 0.8rem; background: rgb(8 6 6 / 0.6); backdrop-filter: blur(6px); }
+    .outline-word { font-size: 40vw; }
+    .giant { top: 24%; -webkit-text-stroke-color: rgb(201 163 90 / 0.25); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #intro { display: none; } .name__w span { transform: none; transition: none; }
+  }
+</style>
+</head>
+<body>
+
+<span data-sc-progress></span>
+<div class="sc-grain" aria-hidden="true"></div>
+
+<header class="site-bar">
+  <a class="mark" href="#top" aria-label="Old Hill Spirits, back to top"><span>OLD HILL</span><small>SPIRITS</small></a>
+  <a class="btn btn--ghost" href="https://www.kosherwine.co.uk/miltonduff-2009-16-year-old-old-hill-spirits-p18588" rel="noopener">Buy the bottle</a>
+</header>
+
+<div id="intro" aria-hidden="true">
+  <div class="intro__mark"><span>O</span><span>L</span><span>D</span><span>&nbsp;</span><span>H</span><span>I</span><span>L</span><span>L</span></div>
+  <div class="intro__line"></div>
+  <p class="intro__sub">Signature Cask Series</p>
+</div>
+<canvas id="dust" aria-hidden="true"></canvas>
+
+<main id="top">
+
+  <!-- 1 · ARRIVAL: the real bottle rises between the two halves of the name -->
+  <section class="act-hero" data-sc-act="pin" data-sc-span="2.6" data-sc-drift="#0a0706">
+    <div data-sc-stage>
+      <canvas class="ember" id="ember" aria-hidden="true"></canvas>
+      <div class="name" aria-hidden="true">
+        <span class="name__w name__w--l"><span>O</span><span>L</span><span>D</span></span>
+        <span class="name__w name__w--r"><span>H</span><span>I</span><span>L</span><span>L</span></span>
+      </div>
+      <div class="h-bottle">
+        <div class="h-bottle__tilt">
+          <img class="h-cut" src="assets/bottle.webp" width="422" height="1788" alt="The Old Hill Spirits Miltonduff 2009, 16 year old single malt bottle">
+          <span class="h-sheen" aria-hidden="true"></span>
+        </div>
+        <span class="h-shadow" aria-hidden="true"></span>
+      </div>
+      <div class="callout callout--l" data-sc-cue="0.18 0.8"><b>Miltonduff</b><span>Distilled 2009</span></div>
+      <div class="callout callout--r" data-sc-cue="0.24 0.8"><b>16 Years</b><span>Single cask · 46%</span></div>
+      <p class="h-tag" data-sc-cue="0 0.22 0">Signature Cask Series · One of 306 bottles</p>
+      <h1 class="h-title" data-sc-cue="0.34 0.96 0.18 0.1" data-sc-kinetic="words">Aged. Rare. <span class="gold">Kosher.</span></h1>
+      <span class="exit-fade" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <!-- 1b · THE HILL: an arch opens onto the ridge at last light -->
+  <section class="act-hill" data-sc-act="scrub" data-sc-span="2.8" data-sc-dwell="0.2" data-sc-drift="#140b08">
+    <div data-sc-stage>
+      <img class="sky" src="assets/sky-plate.webp" alt="" aria-hidden="true">
+      <div class="hill-vig" aria-hidden="true"></div>
+      <div class="outline-word" aria-hidden="true">THE HILL</div>
+      <div class="arch">
+        <img class="sc-stage__poster" src="assets/hero-poster.webp" alt="">
+        <video data-sc-scrub data-sc-src="assets/hero.mp4" muted playsinline
+               aria-label="The bottle and its gift box on a mountain ridge as the sun sets"></video>
+      </div>
+      <div class="sc-copy sc-copy--lead beat2" data-sc-cue="0.08 0.56">
+        <p class="eyebrow">Our story</p>
+        <h2 class="sc-display sc-display--lg" data-sc-kinetic="lines">Patience <span class="gold">is the recipe.</span></h2>
+      </div>
+      <div class="sc-copy sc-copy--trail beat2" data-sc-cue="0.5 1 0.16 0.04">
+        <h2 class="sc-display sc-display--lg" data-sc-kinetic="lines">It rests in oak <span class="gold">until it is ready.</span></h2>
+      </div>
+      <span class="exit-fade" aria-hidden="true" style="--fade-to:#2a0f15"></span>
+    </div>
+  </section>
+
+  <!-- 2 · THE RECORD: pin, the facts land one at a time -->
+  <section data-sc-act="pin" data-sc-span="3" data-sc-drift="#2a0f15">
+    <div data-sc-stage class="record">
+      <div class="giant" aria-hidden="true">MILTONDUFF · SPEYSIDE · MILTONDUFF · SPEYSIDE</div>
+      <p data-sc-cue="0 0.26 0 0.06">Distilled at Miltonduff, Speyside. <em>November 2009.</em></p>
+      <p data-sc-cue="0.24 0.51 0.06 0.06">Sixteen years in one <em>first fill bourbon barrel.</em></p>
+      <p data-sc-cue="0.49 0.76 0.06 0.06">No chill filtration. <em>No colouring.</em></p>
+      <p data-sc-cue="0.74 1 0.06 0">One cask. <em>306 bottles.</em></p>
+    </div>
+  </section>
+
+  <!-- 3 · THE STANDARD: flow + reveal -->
+  <section class="sc-section kosher" data-sc-act="flow" data-sc-drift="#0d0b0b">
+    <div class="sc-wrap split">
+      <figure data-sc-reveal="up" data-sc-reveal-at="0 0.32">
+        <img src="assets/glass-mountain.webp" width="1240" height="1070" loading="lazy"
+             alt="An Old Hill Spirits nosing glass of whisky held up against mountains at sunset">
+      </figure>
+      <div class="sc-stack" data-sc-in data-sc-stagger="80">
+        <p class="eyebrow">A first for kosher whisky</p>
+        <h2 class="sc-display sc-display--lg">Exceptional whisky. <span class="gold">Exceptional standards.</span></h2>
+        <p class="sc-body">A rare 16 year old Miltonduff single malt, drawn from a single cask and produced under stringent CRC kosher supervision.</p>
+        <dl class="facts">
+          <div><dt>Bottles</dt><dd class="big" data-sc-count="0 306">306</dd></div>
+          <div><dt>Aged</dt><dd>16 years</dd></div>
+          <div><dt>Strength</dt><dd>46% vol</dd></div>
+          <div><dt>Bottle</dt><dd>70cl</dd></div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · THE POUR: scrub, the peak. Largest span on the page. -->
+  <section class="act-pour" data-sc-act="scrub" data-sc-span="3.4" data-sc-dwell="0.26" data-sc-drift="#050404">
+    <div data-sc-stage>
+      <div class="age" aria-hidden="true">16</div>
+      <img class="sc-stage__poster" src="assets/pour-poster.webp" alt="">
+      <video data-sc-scrub data-sc-src="assets/pour.mp4" data-sc-src-mobile="assets/pour-m.mp4" muted playsinline
+             aria-label="Whisky pouring into a nosing glass in slow motion"></video>
+      <div class="sc-scrim sc-scrim--band" aria-hidden="true"></div>
+      <div class="sc-copy sc-copy--lead beat" data-sc-cue="0.04 0.34" style="bottom:auto;top:30vh">
+        <p class="eyebrow">The pour</p>
+        <h2 class="sc-display sc-display--lg" data-sc-kinetic="lines">Into the <span class="gold">glass.</span></h2>
+      </div>
+      <div class="sc-copy sc-copy--trail beat" data-sc-cue="0.3 0.62" style="bottom:auto;top:30vh">
+        <h2 class="sc-display sc-display--lg" data-sc-kinetic="lines">A colour of <span class="gold">old gold.</span></h2>
+        <p class="sc-body" style="margin-left:auto">Sixteen years of oak, and not a drop of caramel.</p>
+      </div>
+      <div class="sc-copy sc-copy--center pour-copy" data-sc-cue="0.6 1 0.14 0.05" style="top:auto;bottom:clamp(2.5rem,10vh,7rem);translate:-50% 0">
+        <h2 class="sc-display" data-sc-kinetic="words">Natural colour. <span class="gold">Nothing added.</span></h2>
+        <p class="sc-body">Exactly as the cask gave it.</p>
+      </div>
+      <span class="exit-fade" aria-hidden="true"></span>
+    </div>
+  </section>
+
+  <!-- 5 · YOURS: pin + the turntable. Last element on the page. -->
+  <section id="buy" data-sc-act="pin" data-sc-span="1.4" data-sc-drift="#0d0b0b">
+    <div data-sc-stage class="close">
+      <div class="lamp" id="lamp" data-sc-cue="0 1 0 0" data-sc-rise="0">
+        <div class="lamp__bottle">
+          <img src="assets/bottle.webp" width="422" height="1788" alt="The Miltonduff 2009 bottle">
+          <span class="lamp__light" aria-hidden="true"></span>
+        </div>
+        <span class="lamp__hint">Move to catch the light</span>
+      </div>
+      <div class="close__copy">
+        <h2 class="sc-display" data-sc-cue="0 1 0 0" data-sc-kinetic="lines">Hold it to the light. <span class="gold">Then make it yours.</span></h2>
+        <div data-sc-cue="0 1 0 0" data-sc-rise="0">
+          <div class="price"><strong>£79.99</strong><s>£89.99</s></div>
+          <a class="btn btn--gold" href="https://www.kosherwine.co.uk/miltonduff-2009-16-year-old-old-hill-spirits-p18588" rel="noopener">Buy the bottle</a>
+        </div>
+      </div>
+      <footer class="foot">
+        <span>© 2026 Old Hill Spirits · Company no. 16848096</span>
+        <span>Available exclusively at The Grapevine · <a href="mailto:david@thegrapevine.co.uk">david@thegrapevine.co.uk</a> · <a href="tel:+442038155420">020 3815 5420</a></span>
+        <span>Please enjoy responsibly. 18+ only.</span>
+      </footer>
+    </div>
+  </section>
+
+</main>
+
+<script src="lenis.min.js"></script>
+<script src="scrollcraft.js"></script>
+<script>
+/* intro, smooth scroll, then the engine */
+(function () {
+  var root = document.documentElement, reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('.intro__mark span, .name__w span').forEach(function (el, i, all) { el.style.setProperty('--i', i % 8); el.style.transitionDelay = (i % 8) * 60 + 'ms'; });
+  var opened = false; function open() { if (opened) return; opened = true; root.classList.remove('is-intro'); setTimeout(function () { root.classList.add('is-ready'); }, 650); }
+  var t0 = Date.now();
+  addEventListener('load', function () { setTimeout(open, Math.max(0, 1300 - (Date.now() - t0))); });
+  setTimeout(open, 3000);
+  if (reduce) { root.classList.add('is-ready'); return; }
+  if (window.Lenis) {
+    var lenis = new Lenis({ lerp: 0.09, smoothWheel: true });
+    (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(performance.now());
+    document.querySelectorAll('a[href^="#"]').forEach(function (a) { a.addEventListener('click', function (e) { var id = a.getAttribute('href'); if (id.length > 1 && document.querySelector(id)) { e.preventDefault(); lenis.scrollTo(id); } }); });
+  }
+})();
+</script>
+<script>ScrollCraft.mount(document.body);</script>
+<script>
+/* Ember: a slow golden haze behind the hero, drawn in WebGL. No asset, no download. */
+(function () {
+  var c = document.getElementById('ember'); if (!c) return;
+  var gl = c.getContext('webgl', { premultipliedAlpha: false, antialias: false }); if (!gl) return;
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+  var fs = 'precision mediump float;uniform vec2 r;uniform float t;uniform float s;'+
+    'float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}'+
+    'float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}'+
+    'float fb(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*n(p);p*=2.03;a*=.5;}return v;}'+
+    'void main(){vec2 uv=gl_FragCoord.xy/r;vec2 q=uv*vec2(r.x/r.y,1.)*2.2;'+
+    'float f=fb(q+vec2(t*.03,-t*.06)+fb(q*1.7-vec2(0.,t*.05)));'+
+    'float glow=smoothstep(1.15,0.,length((uv-vec2(.5,.08))*vec2(1.2,1.6)));'+
+    'float v=f*glow*(1.0+s*.25);'+
+    'vec3 col=mix(vec3(.03,.02,.02),vec3(.85,.48,.16),v)+vec3(1.,.75,.4)*pow(v,3.)*.3;'+
+    'gl_FragColor=vec4(col,1.);}';
+  function sh(type, src) { var o = gl.createShader(type); gl.shaderSource(o, src); gl.compileShader(o); return o; }
+  var pr = gl.createProgram(); gl.attachShader(pr, sh(gl.VERTEX_SHADER, vs)); gl.attachShader(pr, sh(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(pr); gl.useProgram(pr);
+  var b = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, b); gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
+  var loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+  var ur = gl.getUniformLocation(pr, 'r'), ut = gl.getUniformLocation(pr, 't'), us = gl.getUniformLocation(pr, 's');
+  var act = c.closest('[data-sc-act]'), vis = true;
+  new IntersectionObserver(function (e) { vis = e[0].isIntersecting; }).observe(act);
+  function size() { var d = Math.min(devicePixelRatio, 1.5) * 0.5; c.width = c.clientWidth * d; c.height = c.clientHeight * d; gl.viewport(0, 0, c.width, c.height); }
+  size(); addEventListener('resize', size);
+  (function frame(ms) {
+    if (vis) { gl.uniform2f(ur, c.width, c.height); gl.uniform1f(ut, reduce ? 4 : ms / 1000); gl.uniform1f(us, parseFloat(getComputedStyle(act).getPropertyValue('--sc-p')) || 0); gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4); }
+    if (!reduce) requestAnimationFrame(frame);
+  })(0);
+})();
+/* Dust: gold motes drifting in the light, the whole way down. */
+(function () {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var c = document.getElementById('dust'), x = c.getContext('2d'), P = [], w, h, last = scrollY, v = 0;
+  function size() { w = c.width = innerWidth; h = c.height = innerHeight; }
+  size(); addEventListener('resize', size);
+  var N = innerWidth < 860 ? 24 : 54;
+  for (var i = 0; i < N; i++) P.push({ x: Math.random(), y: Math.random(), r: Math.random() * 1.6 + 0.4, s: Math.random() * 0.3 + 0.1, a: Math.random() * 6.28 });
+  (function f() {
+    var y = scrollY; v += ((y - last) - v) * 0.1; last = y;
+    x.clearRect(0, 0, w, h);
+    for (var i = 0; i < P.length; i++) {
+      var p = P[i]; p.a += 0.01; p.y -= (p.s * 0.0006 + v * 0.00004 * p.s); p.x += Math.sin(p.a) * 0.0002;
+      if (p.y < -0.02) p.y = 1.02; if (p.y > 1.02) p.y = -0.02;
+      var al = 0.35 + 0.35 * Math.sin(p.a * 2);
+      x.beginPath(); x.arc(p.x * w, p.y * h, p.r * (w / innerWidth), 0, 6.28);
+      x.fillStyle = 'rgba(232,190,120,' + al.toFixed(3) + ')'; x.fill();
+    }
+    if (document.hidden) { setTimeout(function () { requestAnimationFrame(f); }, 500); } else requestAnimationFrame(f);
+  })();
+})();
+</script>
+<script>
+/* Signature move: the closing bottle catches the light where your hand is.
+   The pointer (or a finger on touch) moves a warm highlight across the real
+   label and leans the bottle a few degrees toward it. */
+(function () {
+  var lamp = document.getElementById('lamp'); if (!lamp) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  var tx = 0, ty = 0, x = 0, y = 0, on = false;
+  function set(e) { var r = lamp.getBoundingClientRect(); tx = Math.max(-1, Math.min(1, ((e.clientX - r.left) / r.width - 0.5) * 2)); ty = Math.max(-1, Math.min(1, ((e.clientY - r.top) / r.height - 0.5) * 2)); }
+  document.getElementById('buy').addEventListener('pointermove', set);
+  new IntersectionObserver(function (es) { on = es[0].isIntersecting; if (on) loop(); }).observe(lamp);
+  function loop() {
+    x += (tx - x) * 0.1; y += (ty - y) * 0.1;
+    lamp.style.setProperty('--lx', x.toFixed(3)); lamp.style.setProperty('--ly', y.toFixed(3));
+    if (on) requestAnimationFrame(loop);
+  }
+})();
+</script>
+</body>
+</html>
