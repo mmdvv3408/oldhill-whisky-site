@@ -43,6 +43,11 @@
   .title { position: absolute; z-index: 2; inset: clamp(5.5rem, 13vh, 8rem) 0 auto; text-align: center; padding: 0 1.5rem; }
   .title h1 { margin: 0; font: 300 clamp(3rem, 8vw, 7.5rem)/0.95 var(--sc-font-display); letter-spacing: 0.02em; color: var(--sc-ink); text-shadow: 0 2px 30px rgb(0 0 0 / 0.5); }
   .title h1 i { color: var(--gold-soft); }
+  @media (min-width: 861px) {
+    .title { inset: auto auto clamp(2.4rem, 9vh, 6rem) var(--sc-gutter); text-align: left; padding: 0; max-width: 32vw; }
+    .title h1 { font-size: clamp(3rem, 5.2vw, 6rem); }
+    .scroll-cue { display: none; }
+  }
   .kicker { font: 500 0.64rem/1 var(--sc-font-text); letter-spacing: 0.42em; text-transform: uppercase; color: var(--gold-soft); margin: 0 0 1.4rem; text-shadow: 0 1px 10px rgb(0 0 0 / 0.6); }
   .scroll-cue { position: fixed; left: 50%; bottom: 1.6rem; margin: 0; width: 1px; height: 3.2rem; background: linear-gradient(var(--sc-accent), transparent); animation: drip 2.4s ease-in-out infinite; }
   @keyframes drip { 0%,100% { transform: scaleY(0.3); transform-origin: top; opacity: 0.4 } 50% { transform: scaleY(1); opacity: 1 } }
@@ -99,34 +104,34 @@
 
 <main id="top">
   <!-- One continuous film: bottle, cork, pour, glass. Scroll is the playhead. -->
-  <section class="film" data-sc-act="scrub" data-sc-span="7" data-sc-dwell="0.12">
+  <section class="film" data-sc-act="scrub" data-sc-span="9" data-sc-dwell="0.1">
     <div data-sc-stage>
       <img class="sc-stage__poster" src="assets/film-poster.webp" alt="">
       <video data-sc-scrub data-sc-src="assets/film.mp4" data-sc-src-mobile="assets/film-m.mp4" muted playsinline
-             aria-label="The Miltonduff 2009 bottle is opened and poured into a glass"></video>
+             aria-label="The Miltonduff 2009 bottle on a mountain top, then uncorked and poured into a glass"></video>
       <div class="shade" aria-hidden="true"></div>
       <div class="rail" aria-hidden="true"></div>
 
-      <div class="title" data-sc-cue="0 0.14 0">
+      <div class="title" data-sc-cue="0 0.17 0">
         <p class="kicker">Miltonduff · Distilled 2009</p>
         <h1>Sixteen years,<br><i>one cask.</i></h1>
         <span class="scroll-cue" aria-hidden="true"></span>
       </div>
 
-      <div class="chapter" data-sc-cue="0.16 0.36">
-        <span class="n">I · The cask</span>
-        <p>One first fill bourbon barrel. <i>Speyside, 2009.</i></p>
+      <div class="chapter" data-sc-cue="0.22 0.38">
+        <span class="n">I · The opening</span>
+        <p data-sc-kinetic="words">Sixteen years of waiting. <i>Then, the cork.</i></p>
       </div>
-      <div class="chapter" data-sc-cue="0.38 0.56">
-        <span class="n">II · The opening</span>
-        <p>Never chill filtered. <i>Never coloured.</i></p>
+      <div class="chapter" data-sc-cue="0.42 0.6">
+        <span class="n">II · The pour</span>
+        <p data-sc-kinetic="words">One first fill bourbon barrel. <i>Speyside, 2009.</i></p>
       </div>
-      <div class="chapter" data-sc-cue="0.58 0.76">
-        <span class="n">III · The pour</span>
-        <p>A first for <i>kosher whisky.</i> Under CRC supervision.</p>
+      <div class="chapter" data-sc-cue="0.64 0.8">
+        <span class="n">III · The glass</span>
+        <p data-sc-kinetic="words">Never chill filtered, never coloured. <i>A first for kosher whisky.</i></p>
       </div>
 
-      <div class="close" id="buy" data-sc-cue="0.8 1 0.2 0">
+      <div class="close" id="buy" data-sc-cue="0.83 1 0.2 0">
         <p class="kicker">One of 306 bottles</p>
         <h2>Make it <i>yours.</i></h2>
         <dl>
